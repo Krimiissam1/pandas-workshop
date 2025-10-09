@@ -82,6 +82,48 @@ You can work through the notebooks locally or in your browser. Pick the installa
     ![check env](./media/env_check.png)
 
 
+### Meeting Room Booking Demo
+
+This repository now ships with an end-to-end example that demonstrates how to manage meeting rooms programmatically and through a Dash-powered dashboard.
+
+#### TL;DR Quick Start
+
+If you already have Python 3.8–3.11 and `make` installed, you can get up and running with the following commands from the project root:
+
+```bash
+$ python -m venv .venv           # create an isolated environment (optional but recommended)
+$ source .venv/bin/activate      # On Windows use: .venv\Scripts\activate
+(.venv) $ make install           # install app + dashboard dependencies
+(.venv) $ make test              # run the unit tests
+(.venv) $ make dash              # start the dashboard at http://127.0.0.1:8050
+```
+
+> **Note**: If `make` is unavailable on your platform, see the [detailed walkthrough](./docs/meeting_room_quickstart.md) for equivalent one-line commands.
+
+#### Detailed Walkthrough
+
+1. Activate the environment you created in the previous step (for example `conda activate pandas_workshop` or `source pandas_workshop/bin/activate`).
+2. Install the required dependencies:
+
+    ```bash
+    (pandas_workshop) ~/pandas-workshop$ pip install -r requirements.txt
+    ```
+
+3. Run the automated tests for the booking manager logic:
+
+    ```bash
+    (pandas_workshop) ~/pandas-workshop$ python -m unittest discover -s tests -p 'test*.py' -v
+    ```
+
+4. Launch the interactive dashboard locally:
+
+    ```bash
+    (pandas_workshop) ~/pandas-workshop$ python dash_app.py
+    ```
+
+5. Open your browser to the address shown in the terminal (by default <http://127.0.0.1:8050>) to manage rooms, create bookings, check availability, and view the reservation timeline.
+
+
 ### Cloud Options
 
 #### GitHub Codespaces
